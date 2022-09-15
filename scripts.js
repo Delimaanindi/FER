@@ -2,6 +2,12 @@
 const startFetchDataBtn = document.getElementById("startFetchDataBtn")
 const rentCarsList = document.getElementById("rentCarsList")
 
+// mendapatkan div dengan id pageInputSection
+const pageInputSection = document.getElementById("pageInputSection")
+
+// mendapatkan input teks dengan id currentPageInput
+const currentPageInput = document.getElementById("currentPageInput")
+
 // penyimpanan data yang ditarik dari API
 let rentedCarsData = []
 
@@ -30,6 +36,9 @@ function fetchRentCarsData() {
 // mengambil data dari API - cara async/await
 async function fetchRentCarsDataAsyncAwait() {
     try {
+        // sembunyikan pageInputSection
+        pageInputSection.setAttribute('class', 'doNotDisplay')
+
         let result = await fetch('https://bootcamp-rent-car.herokuapp.com/admin/car')
         let rentCars = await result.json()
 
@@ -43,6 +52,8 @@ async function fetchRentCarsDataAsyncAwait() {
         // mulai menampilkan data dari halaman pertama
         getCarsPage(1)
 
+        // tampilkan form navigasi halaman
+        pageInputSection.removeAttribute('class')
 
     } catch (err) {
         // jika terdapat error, maka akan print errornya
@@ -67,7 +78,7 @@ function getCarsPage(currentPage) {
         return;
     }
 
-    // mulai mengambil dari array index
+    // mulai mengambil dari array
     const start = (currentPage - 1) * pageSize
     // akhir index ambil array: start + besaran halaman
     const end = start + pageSize
@@ -86,8 +97,7 @@ function getCarsPage(currentPage) {
     })
 }
 
-// mendapatkan input teks dengan id currentPageInput
-const currentPageInput = document.getElementById("currentPageInput")
+
 
 // menambahkan event listener ketika teks dimasukkan dan ditekan enter
 // dengan callback berisi pengubahan halaman yang ditampilkan
