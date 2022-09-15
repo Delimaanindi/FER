@@ -1,4 +1,12 @@
 #rentCarsList {
+    margin-top: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+#pageInputSection {
+    margin-top: 10px;
     padding: 16px;
     display: flex;
     flex-direction: column;
