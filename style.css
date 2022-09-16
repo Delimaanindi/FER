@@ -1,0 +1,46 @@
+#rentCarsList {
+    margin-top: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+#pageInputSection {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    width: 250px;
+    margin-bottom: 8px;
+}
+.doNotDisplay {
+    display: none !important;
+}
+
+.carCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    width: 250px;
+    margin-bottom: 8px;
+}
+
+.carName {
+    font-size: 20px;
+}
+
+.carPrice {
+    font-size: 24px;
+}
+
+.carImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
