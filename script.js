@@ -2,10 +2,13 @@ const startFetchDataBtn = document.getElementById("startFetchDataBtn")
 
 startFetchDataBtn.addEventListener('click',fetchRentCarsDataAsyncAwait);
 const rentCarsList = document.getElementById("rentCarsList");
+// mendapatkan div dengan id pageInputSection
+const pageInputSection = document.getElementById("pageInputSection")
+const currentPageInput = document.getElementById("currentPageInput")
 
 let rentedCarsData = [];
 // penyimpanan data yang akan ditampilkan
-let displayedCarsData = []
+let displayedCarsData = [];
 
 // ukuran halaman yang ditampilkan
 const pageSize = 10
@@ -48,7 +51,7 @@ function clearRentCarList() {
     }
 }
 
-function getCarsPage() {
+function getCarsPage(currentPage) {
     if(currentPage > pageCount || rentedCarsData.length == 0) {
         return;
     }
@@ -67,7 +70,7 @@ function getCarsPage() {
     displayedCarsData.forEach((car) => {
         // masukkan item card mobil ke rentCarsList 
         // agar dapat ditampilkan
-        rentCarsList.append(createCarCard(car))
+        rentCarsList.append(createdCarCard(car))
     })
     
 }
