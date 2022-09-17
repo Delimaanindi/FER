@@ -15,6 +15,19 @@
     width: 250px;
     margin-bottom: 8px;
 }
+
+#searchInputSection {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    width: 250px;
+    margin-bottom: 8px;
+}
+
 .doNotDisplay {
     display: none !important;
 }
@@ -44,3 +57,4 @@
     height: 100%;
     object-fit: cover;
 }
+

@@ -5,6 +5,9 @@ const rentCarsList = document.getElementById("rentCarsList");
 // mendapatkan div dengan id pageInputSection
 const pageInputSection = document.getElementById("pageInputSection")
 const currentPageInput = document.getElementById("currentPageInput")
+const searchInputSection = document.getElementById("searchInputSection")
+const searchInput = document.getElementById("searchInput")
+
 
 let rentedCarsData = [];
 // penyimpanan data yang akan ditampilkan
@@ -28,6 +31,7 @@ function fetchRentCarsData() {
 async function fetchRentCarsDataAsyncAwait() {
     try {
         pageInputSection.setAttribute('class', 'doNotDisplay')
+        searchInputSection.setAttribute('class', 'doNotDisplay')
         let result = await fetch('https://bootcamp-rent-car.herokuapp.com/admin/car')
         let rentCars = await result.json()
         rentedCarsData = rentCars 
@@ -38,6 +42,7 @@ async function fetchRentCarsDataAsyncAwait() {
 
         getCarsPage(1)
         pageInputSection.removeAttribute('class')
+        searchInputSection.removeAttribute('class')
 
     }
     catch(err) {
@@ -91,6 +96,13 @@ currentPageInput.addEventListener("change", (event) => {
     getCarsPage(desiredPage)
 })
 
+searchInput.addEventListener('change', (event) => {
+    const value = event.target.value
+    if(!value) {
+    getCarsPage(1)
+ }
+}
+)
 
 function createdCarCard(car) {
 
