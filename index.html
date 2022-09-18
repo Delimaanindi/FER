@@ -1,25 +1,36 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <button id="startFetchDataBtn">MULAI AMBIL DATA</button>
+    <div id="container">
+        <div id="pageInputSection" class="doNotDisplay">
+            <label>Current Page</label>
+            <div id="paginationButtonsSection">
+                <button id="prevPageBtn">Previous</button>
+                <label id="pageDisplayTxt"></label>
+                <button id="nextPageBtn">Next</button>
+            </div>
+        </div>
 
-    <div id="pageInputSection" class="doNotDisplay">
-        <label>Current Page</label>
-        <input type="number" id="currentPageInput" min="1"/>
+        <div id="searchInputSection" class="doNotDisplay">
+            <label>Search</label>
+            <input type="text" id="searchInput" placeholder="Masukkan keyword kesini" />
+        </div>
+
+
+        <div id="rentCarsList"></div>
     </div>
 
-    <div id="searchInputSection" class="doNotDisplay">
-        <label>Search</label>
-        <input type="text" id="searchInput" />
-    </div>
 
-    <div id="rentCarsList"></div>
-
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
+>>>>>>> 8114747421eb5c359079c1cff39a715f27aee50c
 </body>
 
 </html>
